@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("https://i.imgur.com/5fQUPDl.jpg");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .linkedin-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .linkedin-link a {
+            text-decoration: none;
+            color: #0077b5;
+            font-weight: bold;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            margin: 5px;
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #page-1 img {
+            max-width: 100%;
+            max-height: 100vh;
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .page-animation {
+            animation-duration: 0.5s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+        }
+
+        .slideInFromRight {
+            animation-name: slideInFromRight;
+        }
+
+        .slideInFromLeft {
+            animation-name: slideInFromLeft;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://media.licdn.com/dms/image/D4D03AQHBgbfK_1rXPQ/profile-displayphoto-shrink_400_400/0/1715518001098?e=1721260800&v=beta&t=jnNeaPSNt5pyAlfJxTONJkOnVTOffrZnqfLy8fntkqE" alt="Profil Resmi" id="profile-image">
+            <h1 id="info">Eyüp Furkan Sezer</h1>
+            <p id="contact">İletişim Bilgileri</p>
+            <p id="address">Adres: Ankara, Türkiye</p>
+            <p id="phone">Telefon: 0505 494 03 05</p>
+            <p id="email">E-posta: efurkansezer06@gmail.com</p>
+        </header>
+        <section class="active page-animation" id="page-1">
+            <h2>Eğitimlerim</h2>
+            <p id="education">Lisans</p>
+            <p>Ankara Medipol Üniversitesi(2021-2025) <br>
+             <p>-Yönetim Bilişim Sistemleri Uzmanlığı-</p><br>
+            İzmir Aliağa Anadolu Lisesi (2016-2020)</p>
+            <h2>Çalışma yerleri</h2>
+            <p id="working">Bakım onarım test uzmanı/Honda Efe plaza / (2023- 2024)</p>
+            <p>Kurye / Domino's Pizza / (2022-2023) </p>
+            <p>Oyuncu / EC Medya / (2021-2022) </p>
+            <p>Mağaza Müdürü / Koza Optik / (2020-2021) </p>
+            <h2>Hobilerim</h2>
+            <p id="hobbyes">Savunma sanayi çalışmaları hazırlamak</p>
+            <p>Rap Müziği Yapmak <br>
+             <p>Video tasarımı</p>
+             <p>Görsel grafikler çizmek</p><br>
+             <h2>Yazılım dilleri</h2>
+            <p id="language">Python </p>
+            <p>C  <br>
+             <p>Java script  </p>
+              <p>html </p>
+              <p>csss </p>
+             <p></p><br>
+              <h2>Sertifikalar</h2>
+            <p id="certificas">Cyber security Trainee - Akbank </p>
+            <p>Siber Güvenlik Uzmanlığı - Yapı kredi <br>
+             <p>Banka Güvenliğine giriş -Timus Cyber Security </p>
+            <p>Cyber Security Professional - CİSCO </p>
+              
+           
+          
+     
+        </section>
+
+        <footer class="linkedin-link">
+            <a href="https://www.linkedin.com/in/e-furkan-sezer-0a80a8220/" target="_blank"> /LinkedIn/</a>
+            <a href="https://www.youtube.com/@ejderline" target="_blank"> Youtube / </a>
+            <a href="https://www.instagram.com/ejder_line/" target="_blank"> İnstagram / </a>
+            <a href="https://open.spotify.com/intl-tr/artist/5txpxDYSL2Ceitbdn20o0R?si=lVhSODPDTt6IXPc0nuPURA" target="_blank"> Spotify / </a>
+        </footer>
+
+        <div class="buttons">
+            <button onclick="showPage(1)">Eğitimlerim</button>
+            <button id="languageButton" onclick="changeLanguage()">Dil Değiştir</button>
+      
+    <script>
+        var currentPage = 1;
+        var isFullScreen = false;
+        var language = "tr";
+
+        function showPage(pageNumber) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+                if (pageNumber > currentPage) {
+                    section.classList.remove('slideInFromLeft');
+                    section.classList.add('slideInFromRight');
+                } else if (pageNumber < currentPage) {
+                    section.classList.remove('slideInFromRight');
+                    section.classList.add('slideInFromLeft');
+                }
+            });
+            var currentPageSection = document.getElementById('page-' + pageNumber);
+            currentPageSection.classList.add('active');
+            currentPage = pageNumber;
+        }
+
+        document.getElementById("profile-image").addEventListener("click", function() {
+            currentPage = (currentPage % 6) + 1;
+            showPage(currentPage);
+        });
+
+        function submitForm(event) {
+            event.preventDefault();
+            var feedback = document.getElementById("feedback").value;
+            // Burada geri bildirimi işleyebilirsiniz
+            alert("Geri bildiriminiz alındı: " + feedback);
+        }
+
+        function changeLanguage() {
+            if (language === "tr") {
+                document.documentElement.lang = "en";
+                translateToEnglish();
+                language = "en";
+            } else {
+                document.documentElement.lang = "tr";
+                translateToTurkish();
+                language = "tr";
+            }
+        }
+
+        function translateToEnglish() {
+            document.getElementById("contact").textContent = "Contact Information";
+            document.getElementById("address").textContent = "Address: Ankara, Turkey";
+            document.getElementById("phone").textContent = "Phone: 0505 494 03 05";
+            document.getElementById("email").textContent = "E-mail: efurkansezer06@gmail.com";
+
+            document.getElementById("education").textContent = "Education";
+            document.getElementById("working").textContent = "Workplaces";
+            document.getElementById("hobbyes").textContent = "Hobbies";
+        }
+
+        function translateToTurkish() {
+            document.getElementById("contact").textContent = "İletişim Bilgileri";
+            document.getElementById("address").textContent = "Adres: Ankara, Türkiye";
+            document.getElementById("phone").textContent = "Telefon: 0505 494 03 05";
+            document.getElementById("email").textContent = "E-posta: efurkansezer06@gmail.com";
+
+            document.getElementById("education").textContent = "Eğitimlerim";
+            document.getElementById("working").textContent = "Çalışma yerleri";
+            document.getElementById("hobbyes").textContent = "Hobilerim";
+       
+    </script>
+</body>
+</html>
